@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 const Pay = ({ navigation }) => {
   const [cardNumber, setCardNumber] = useState("");
@@ -7,15 +8,16 @@ const Pay = ({ navigation }) => {
   const [ccv, setCcv] = useState("");
   const [cardHolder, setCardHolder] = useState("");
 
+  const route = useRoute();
+
   const handleProceed = () => {
     navigation.navigate("Proceed");
   };
-
+  const price = route.params?.price || 0;
   return (
     <View style={styles.container}>
       <View style={styles.upper}>
-        <Text style={{ marginTop: 60, fontSize: 20 }}>Total price </Text>
-        <Text style={{ fontSize: 30, fontWeight: "bold" }}>R70</Text>
+         <Text style={{ fontSize: 30, fontWeight: "bold", marginTop:80 }}>Received Price: R{price}</Text>
         <Text style={{ marginTop: 40, fontSize: 20 }}>
           Payment Method: Credit Card
         </Text>
@@ -71,7 +73,7 @@ const Pay = ({ navigation }) => {
       <View style={styles.lower}>
         <TouchableOpacity onPress={handleProceed}>
           <View style={styles.proceedButton}>
-            <Text style={styles.proceedButtonText}>PROCEED</Text>
+            <Text style={styles.proceedButtonText}>PAY NOW</Text>
           </View>
         </TouchableOpacity>
       </View>

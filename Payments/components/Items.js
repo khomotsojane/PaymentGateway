@@ -59,7 +59,9 @@ const Items = () => {
         price: item.price,
       },
     ]);
+    navigation.navigate("Pay", { price: item.price });
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -70,7 +72,7 @@ const Items = () => {
         data={chips}
         numColumns={2}
         renderItem={({item})=>(
-            <TouchableOpacity onPress={() => navigation.navigate("Pay")}>
+            <TouchableOpacity onPress={() => SubmitHandler(item)}>
             <View
             style={{
                   backgroundColor: "blue",

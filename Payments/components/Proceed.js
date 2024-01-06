@@ -1,14 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Proceed = () => {
+const Confirmation = () => {
   return (
     <View>
-      <Text>Proceed</Text>
+      <View>
+        <Text></Text>
+      </View>
+      <View>
+
+      </View>
     </View>
   )
 }
 
-export default Proceed
+export default Confirmation
 
 const styles = StyleSheet.create({})
