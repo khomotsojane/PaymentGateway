@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const stripe = require("stripe")("API key from Stripe");
 const app = express();
